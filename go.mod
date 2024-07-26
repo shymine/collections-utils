@@ -1,3 +1,3 @@
-module github.com/shymine/collections-utils
+module github.com/shymine/collectionsutils
 
 go 1.22.4
