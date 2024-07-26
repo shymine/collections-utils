@@ -26,7 +26,7 @@ func Filter[A any](list []A, f func(A) bool) []A {
 	return res
 }
 
-func Intersection[A any](a []A, b []A) []A {
+func Intersection[A comparable](a []A, b []A) []A {
 	res := []A{}
 	for _, el := range a {
 		if Contains(b, el) {
@@ -36,7 +36,7 @@ func Intersection[A any](a []A, b []A) []A {
 	return res
 }
 
-func Contains[A any](list []A, elem A) bool {
+func Contains[A comparable](list []A, elem A) bool {
 	for _, el := range list {
 		if el == elem {
 			return true
