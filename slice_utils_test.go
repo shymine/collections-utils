@@ -1,4 +1,4 @@
-package collectionutils
+package collectionsutils
 
 import (
 	"reflect"

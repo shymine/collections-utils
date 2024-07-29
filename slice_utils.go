@@ -1,4 +1,4 @@
-package collectionutils
+package collectionsutils
 
 func Map[A any, B any](list []A, f func(A) B) []B {
 	res := make([]B, len(list))
