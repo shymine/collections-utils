@@ -44,3 +44,34 @@ func Contains[A comparable](list []A, elem A) bool {
 	}
 	return false
 }
+
+func SymetricDifference[A comparable](a []A, b []A) []A {
+	res := []A{}
+	inter := Intersection(a, b)
+	for _, el := range a {
+		if !Contains(inter, el) {
+			res = append(res, el)
+		}
+	}
+	return res
+}
+
+func ContainsWithFunc[A comparable](list []A, elem A, f func(A, A) bool) bool {
+	for _, el := range list {
+		if f(el, elem) {
+			return true
+		}
+	}
+	return false
+}
+
+func SymetricDifferenceWithFunc[A comparable](a []A, b []A, f func(A, A) bool) []A {
+	res := []A{}
+	inter := Intersection(a, b)
+	for _, el := range a {
+		if !ContainsWithFunc(inter, el, f) {
+			res = append(res, el)
+		}
+	}
+	return res
+}
