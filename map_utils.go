@@ -1,8 +1,8 @@
 package collectionsutils
 
-func Keys[A any](m map[A]any) []A {
+func Keys[A comparable](m map[A]any) []A {
 	res := make([]A, len(m))
-	for el, _ := range m {
+	for el := range m {
 		res = append(res, el)
 	}
 	return res
