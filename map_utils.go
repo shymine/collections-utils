@@ -21,7 +21,7 @@ type keyValue[A any, B any] struct {
 	Value B
 }
 
-func Pairs[A any, B any](m map[A]B) []keyValue[A, B] {
+func Pairs[A comparable, B any](m map[A]B) []keyValue[A, B] {
 	res := make([]keyValue[A, B], len(m))
 	for k, v := range m {
 		res = append(res, keyValue[A, B]{Key: k, Value: v})
